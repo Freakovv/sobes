@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 //void series1() {
 //	int size = 10;
 //	int *arr = new int(size);
@@ -69,23 +69,67 @@ bool is_fractional(int value) {
 	return (value % 10) == 0;
 
 }
-void series5() {
-	int size;
+double fractional(int value) {
+	return value / 10;
+
+}
+void series5() { // ????
+	int size,sum_of_int=0;
 	std::cout << "Введите кол-во элементов в наборе:\t";
+	std::cin >> size;
+	float* arr = new float[size];
+	double* arr1 = new double[size];
+	int i = 0;
+	for (; i < size; i++)
+	{
+		std::cout << "Введите " << i << " элемент набора :\t";
+		std::cin >> *(arr + i);
+		is_fractional(*(arr + i)) ? sum_of_int += *(arr + i)
+			: *(arr1 + i) = *(arr + i); // cout massiv
+		if (float(*(arr + i)) == int(*(arr+i))) // sum_of_int_squares
+		{
+			sum_of_int += *(arr+i);
+		}
+	}
+	std::cout << "Целые числа: ";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << (*(arr1 + i)) << " ";
+	}
+	std::cout << "\n" << "Сумма целых чисел: " << sum_of_int << "\n";
+	delete[] arr;
+}
+void series6() {
+	int size;
+	std::cout << "Введите кол-во элементов в наборе\t";
 	std::cin >> size;
 	float* arr = new float[size];
 	for (int i = 0; i < size; i++)
 	{
-		std::cout << "Введите " << i + 1 << " элемент набора :\t";
+		std::cout << "Введите " << i << " элемент набора : \t";
 		std::cin >> *(arr + i);
-		// is_fractional(i) ? ...
+		*(arr + i)-=int(*(arr+i));
 	}
+	std::cout << "Дробные части набора: ";
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << *(arr + i) << " ";
 
+	}
+	//std::cout << "\n";
+	//for (int i = 0; i < size; i++)
+	//{
+	//	*(arr + i) *= *(arr + i);
+	//}
+	//std::cout << "Произведение дробных частей: " << *arr;
+	delete[] arr;
 }
 int main() {
 	setlocale(LC_ALL, "ru");
 	//series1();
 	//series2();
 	//series3();
-	series4();
+	//series4();
+	series6();
+
 }
