@@ -1,5 +1,5 @@
 #include "series.h"
-void Print_Series() {
+int main() {
 	setlocale(LC_ALL, "Rus");
 	//sum_of_squares(10);
 	//prod_of_squares(2);
@@ -8,7 +8,8 @@ void Print_Series() {
 	//transformation_of_squares(3);
 	//prod_of_double_part(3);
 	//round_array(3);
-}
-int main() {
-	Print_Series();
+	//even_numbers(3);
+	//numbers_of_odd_numbers(3);
+	//std::cout << check_positivity_of_numbers(4);
+	//std::cout << check_numbers(3);
 }

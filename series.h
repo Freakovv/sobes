@@ -3,33 +3,38 @@
 #include <cmath>
 #include <ctime>
 #include "Functions.h"
-void/*s1*/sum_of_squares(int size) {
+void/*s1*/sum_of_squares(int size) 
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	std::cout << SumArray(arr, size);
 	delete[]arr;
 }
-void/*s2*/prod_of_squares(int size) {
+void/*s2*/prod_of_squares(int size) 
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	std::cout << ProdArray(arr,size);
 	delete[]arr;
 }
-void/*s3*/avg_of_squares(int size) {
+void/*s3*/avg_of_squares(int size)
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	double avg = SumArray(arr, size) / size;
 	std::cout << avg;
 	delete[]arr;
 }
-void/*s4*/sum_and_prod_of_array(int size) {
+void/*s4*/sum_and_prod_of_array(int size) 
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	std::cout << SumArray(arr, size);
 	std::cout << std::endl << ProdArray(arr, size);
 	delete[]arr;
 }
-void/*s5*/transformation_of_squares(int size) {
+void/*s5*/transformation_of_squares(int size) 
+{
 	int sum = 0;
 	double* arr = fill_double_array(size);
 	for (int i = 0; i < size; i++)
@@ -43,7 +48,8 @@ void/*s5*/transformation_of_squares(int size) {
 	std::cout << "\n" << sum;
 	delete[]arr;
 }
-void/*s6*/prod_of_double_part(int size) {
+void/*s6*/prod_of_double_part(int size) 
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	for (int i = 0; i < size; i++)
@@ -54,7 +60,8 @@ void/*s6*/prod_of_double_part(int size) {
 	ProdArray(arr, size);
 	delete[] arr;
 }
-void/*s7*/round_array(int size) {
+void/*s7*/round_array(int size) 
+{
 	double* arr = fill_double_array(size);
 	PrintArray(arr, size);
 	for (int i = 0; i < size; i++)
@@ -63,104 +70,80 @@ void/*s7*/round_array(int size) {
 	}
 	printf("Round Squares:");
 	PrintArray(arr, size);
-	SumArray(arr, size);
+	std::cout << SumArray(arr, size);
 	delete[]arr;
 }
-void series8() {
-	int size, times = 0;
-	std::cout << "Введите кол-во элементов в наборе\t";
-	std::cin >> size;
-	int* arr = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << "Введите " << i << " элемент набора : \t";
-		std::cin >> *(arr + i);
-	}
+void/*s8*/even_numbers(int size) 
+{
+	int times = 0;
+	int* arr = fill_int_array(size);
+	PrintArray(arr, size);
 	printf("Все четные числа: ");
 	for (int i = 0; i < size; i++)
 	{
-		if (*(arr + i) % 2 == 0) {
+		if (*(arr + i) % 2 == 0)
+		{
+			++times;
 			std::cout << *(arr + i) << " ";
-			times += 1;
 		}
 	}
 	std::cout << "\nКоличество чисел: " << times;
 	delete[] arr;
 }
-void series9() {
-	int size, times = 0;
-	std::cout << "Введите кол-во элементов в наборе\t";
-	std::cin >> size;
-	int* arr = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << "Введите " << i << " элемент набора : \t";
-		std::cin >> *(arr + i);
-	}
+void/*s9*/numbers_of_odd_array(int size) 
+{
+	int times = 0;
+	int* arr = fill_int_array(size);
+	PrintArray(arr, size);
 	printf("Номера нечетных чисел: ");
 	for (int i = 0; i < size; i++)
 	{
-		if (*(arr + i) % 2 == 1) {
+		if (*(arr + i) % 2 == 1)
+		{
+			++times;
 			std::cout << i << " ";
-			times += 1;
 		}
 	}
 	std::cout << "\nКоличество чисел: " << times;
 	delete[] arr;
 }
-void/*bool*/ series10() {
-	int size;
-	int y;
-	std::cout << "Введите кол-во элементов в наборе\t";
-	std::cin >> size;
-	int* arr = new int[size];
+bool/*s10*/check_positivity_of_array(int size) 
+{
+	int* arr = fill_negative_positive_array(size);
+	PrintArray(arr, size);
 	for (int i = 0; i < size; i++)
 	{
-		std::cout << "Введите " << i << " элемент набора : \t";
-		std::cin >> *(arr + i);
 		if (*(arr + i) > 0) {
-			y = 1;
+			delete[]arr;
+			std::cout << "true" << std::endl;
+			return true;
 		}
-		else {
-			y = 0;
-		}
 	}
-	if (y == 1) {
-		//y=true;
-		std::cout << "true";
-	}
-	else {
-		//y=false;
-		std::cout << "false";
-	}
-	//return y;
 	delete[] arr;
+	return false;
 }
-void series11() {
-	int w;
-	std::cout << "Введите число k:\t";
-	int k;
-	std::cin >> k;
-	std::cout << "Введите кол-во элементов в наборе\t";
-	int size;
-	std::cin >> size;
-	int* arr = new int[size];
+bool/*s11*/check_array_numbers(int size) 
+{
+	int k = 5;
+	std::cout << "k = " << k << std::endl;
+	int* arr = fill_int_array(size);
+	PrintArray(arr, size);
 	for (int i = 0; i < size; i++)
 	{
-		std::cout << "Введите " << i << " элемент набора : \t";
-		std::cin >> *(arr + i);
 		if (*(arr + i) < k) {
-			w = 1;
+			delete[]arr;
+			std::cout << "true" << std::endl;
+			return true;
 		}
-		else {
-			w = 0;
-		}
 	}
-	if (w == 1) {
-		std::cout << "true";
-	}
-	else if (w == 0) {
-		std::cout << "false";
-	}
-	delete[] arr;
+	delete[]arr;
+	return false;
 }
+//void/*s12*/output_numbers(int size) 
+// {
+//	int* arr = fill_int_array(size);
+//	for (int i = 0; i < size; i++)
+//	{
+//
+//	}
+//}

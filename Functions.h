@@ -19,24 +19,25 @@ int* fill_int_array(int size) {
 	return arr;
 }
 double* fill_double_array(int size) {
-	double* array = new double[size];
 	srand(time(NULL));
-	double decimalPart = 0;
+	double* array = new double[size];
 	for (int i = 0; i < size; i++)
 	{
-		decimalPart = (rand() % 10) / 10.0;
+		double decimalPart = (rand() % 10) / 10.0;
 		array[i] = static_cast<double>(rand() % 10 + 1) + decimalPart;
 	}
 	return array;
 }
-void PrintArray(double arr[], int size) {
+int* fill_negative_positive_array(int size) {
+	int* arr = new int[size];
+	srand(time(NULL));
 	for (int i = 0; i < size; i++)
 	{
-		std::cout << arr[i] << " ";
+		*(arr + i) = (rand() % 20) - 10;
 	}
-	std::cout << std::endl;
+	return arr;
 }
-double ProdArray(double arr[], int size) {
+double ProdArray(double* arr, int size) {
 	double prod = 1;
 	for (int i = 0; i < size; i++)
 	{
@@ -44,11 +45,19 @@ double ProdArray(double arr[], int size) {
 	}
 	return prod;
 }
-double SumArray(double arr[], int size) {
+double SumArray(double* arr, int size) {
 	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
 		sum += arr[i];
 	}
 	return sum;
+}
+template <typename T>
+void PrintArray(T* arr, int size) {
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << *(arr+i) << " ";
+	}
+	std::cout << std::endl;
 }
