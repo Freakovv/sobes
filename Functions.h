@@ -37,16 +37,18 @@ int* fill_negative_positive_array(int size) {
 	}
 	return arr;
 }
-double ProdArray(double* arr, int size) {
-	double prod = 1;
+template <typename T>
+T ProdArray(T* arr, int size) {
+	T prod = 1;
 	for (int i = 0; i < size; i++)
 	{
 		prod *= arr[i];
 	}
 	return prod;
 }
-double SumArray(double* arr, int size) {
-	double sum = 0;
+template <typename T>
+T SumArray(T* arr, int size) {
+	T sum = 0;
 	for (int i = 0; i < size; i++)
 	{
 		sum += arr[i];
@@ -61,3 +63,11 @@ void PrintArray(T* arr, int size) {
 	}
 	std::cout << std::endl;
 }
+//template <typename T>
+//T completion_sign_zero(T* arr)
+//{
+//	if (arr[i] == 0)
+//	{
+//		break;
+//	}
+//}
