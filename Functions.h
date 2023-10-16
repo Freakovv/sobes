@@ -63,6 +63,22 @@ void PrintArray(T* arr, int size) {
 	}
 	std::cout << std::endl;
 }
+template <typename T>
+T bubbleSort(T arrForSort, int size) {
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = size - 1; j > i; j--)
+		{
+			if (arrForSort[j] < arrForSort[j - 1])
+			{
+				double buff = arrForSort[j - 1];
+				arrForSort[j - 1] = arrForSort[j];
+				arrForSort[j] = buff;
+			}
+		}
+	}
+	return 0;
+}
 //template <typename T>
 //T completion_sign_zero(T* arr)
 //{

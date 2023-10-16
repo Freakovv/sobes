@@ -1,9 +1,10 @@
 #include "series.h"
 #include "Functions.h"
 int main() {
+	double value1 = 4.1;
 	int value = 5;
-	const int size = 9;
-	double arr[size]{ 1.1,7.8,0,5.1,0,7.1,8.1,-10.2 };
+	const int size = 8;
+	double arr[size]{1.1,7.8,0,5.1,0,7.1,8.1,-10.2 };
 	//sum_of_squares(10);
 	//prod_of_squares(2);
 	//avg_of_squares(2);
@@ -18,5 +19,6 @@ int main() {
 	//std::cout << output_numbers_to_zero(arr, size);
 	//std::cout << number_of_numbers_less_than_value(arr, size, value);
 	//std::cout << output_first_number(arr, size, value);
-	//std::cout << output_last_number(arr,size,value);
+	//output_last_number(arr, size, value);
+	sort_numbers(arr, size, value1);
 }

@@ -198,16 +198,25 @@ double/*s15*/output_first_number(T arr, int size, int value) {
 	return 0;
 }
 template <typename T>
-double/*s16*/output_last_number(int value){
-	for (int i = size; --i)
+void/*s16*/output_last_number(T arr, int size, int value){
+	for (int i = size - 1; i != 0; i--)
 	{
-		//if (*(arr + i) < value) {
-		//	return arr[i];
-		//}
+		if (arr[i] < value) {
+			std::cout << arr[i];
+				break;
+		}
 		if (*(arr + i) == 0)
 		{
 			break;
 		}
 	}
-	return 0;
+}
+template <class T>
+void/*s17*/sort_numbers(T arr, int size, int value) {
+	bubbleSort(arr, size);
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << value << " ";
+		std::cout << *(arr + i) << std::endl;
+	}
 }
