@@ -220,3 +220,56 @@ void/*s17*/sort_numbers(T arr, int size, int value) {
 		std::cout << *(arr + i) << std::endl;
 	}
 }
+template <class T>
+void/*s19*/output_numbers_less_than_left_number(T arr, int size) {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr + i + 1) < *(arr + i)) {
+			std::cout << *(arr + i) << " ";
+			++count;
+		}
+	}
+	std::cout << "\n" << count;
+}
+template <class T>
+void/*s20*/output_numbers_less_than_right_number(T arr, int size) {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr + i) < *(arr + i + 1)) {
+			std::cout << *(arr + i) << " ";
+			++count;
+		}
+	}
+	std::cout << "\n" << count;
+}
+template <class T>
+bool/*s21*/checking_numbers_for_ascending(T arr, int size) {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr+i) < *(arr + i + 1)) {
+			count++;
+		}
+		if (count == size-1)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+template <class T>
+double/*s22*/checking_numbers_for_decreasing(T arr, int size) {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (checking_numbers_for_ascending(arr, size) == 0) {
+			return 0;
+		}
+		else if (*(arr + i) < *(arr + i + 1)){
+				return i+1;
+		}
+	}
+}
+

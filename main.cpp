@@ -4,7 +4,9 @@ int main() {
 	double value1 = 4.1;
 	int value = 5;
 	const int size = 8;
+	const int size1 = 3;
 	double arr[size]{1.1,7.8,0,5.1,0,7.1,8.1,-10.2 };
+	int arr1[size]{ 1,2,3 };
 	//sum_of_squares(10);
 	//prod_of_squares(2);
 	//avg_of_squares(2);
@@ -20,5 +22,9 @@ int main() {
 	//std::cout << number_of_numbers_less_than_value(arr, size, value);
 	//std::cout << output_first_number(arr, size, value);
 	//output_last_number(arr, size, value);
-	sort_numbers(arr, size, value1);
+	//sort_numbers(arr, size, value1);
+	//output_numbers_less_than_left_number(arr, size);
+	//output_numbers_less_than_right_number(arr, size);
+	//std::cout << checking_numbers_for_ascending(arr1, size1);
+	std::cout << checking_numbers_for_decreasing(arr1, size1);
 }
